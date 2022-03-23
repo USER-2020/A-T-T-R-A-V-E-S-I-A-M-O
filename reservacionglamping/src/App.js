@@ -11,7 +11,6 @@ function App() {
 
     <BrowserRouter>
        <Header/>
-       <h1>Hola estoy funcionando</h1>
        <Routes>
                   
         <Route path ="/search" element = { <SearchPage/>} />
