@@ -17,7 +17,7 @@ const DatePicker = () => {
     const handleSelect = ()=>{}
   return (
     <div className= {classes.root}>
-        <h2>Calendario</h2>
+        
         <DateRangePicker ranges = { [selectionRange] }
             onChange = {handleSelect}
         />
@@ -42,6 +42,7 @@ const useStyle = makeStyles((theme) => ({
         position:'absolute',
         top: "13vh", //pocision vertical
         left: "30vw", //Posicion horizontal
+        zIndex: "50",
         [theme.breakpoints.down("sm")]: {
             //para pantallas pequeñas sm (small) responsive
             top:"16vh",

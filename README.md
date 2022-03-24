@@ -1,1 +1,0 @@
-# A-T-T-R-A-V-E-S-I-A-M-O
