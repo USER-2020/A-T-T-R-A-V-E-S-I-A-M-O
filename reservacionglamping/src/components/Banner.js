@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, makeStyles, Typography} from '@material-ui/core'
 import background_image from "../img/animation.gif"
+import { Link } from 'react-router-dom'
 
 const Banner = () => {
   // inicializacion de useStyle
@@ -9,7 +10,10 @@ const Banner = () => {
    <div className= { classes.root }>
      <div className = { classes.info}>
         <Typography variant ="h2">A T R A V E R S I A M M O </Typography>
-        <Button variant ="contained">Check our rooms</Button>
+        <Link to ="/search">
+            <Button variant ="contained">Check our rooms</Button>
+        </Link>
+        
      </div>
       
    </div>

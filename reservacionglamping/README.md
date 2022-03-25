@@ -25,4 +25,13 @@
 - Footer, se crea el componente y luego se llena con los datos que se necesitan.
 - Search Page: importamos chips del componente <mockData.js>
 - Search Page: <Results/> - Se utiliza para mostrar cabañas de acuerdo a los filtros de precio.
-- Search Page: <Paper/> lo utilizamos para plasmar objetos como si fuera una hoja de papel, el fondo de una aplicación se asemeja a la textura plana y opaca de una hoja de papel, y el comportamiento de una aplicación imita la capacidad del papel para cambiar el tamaño, barajar y unir en varias hojas. (minuto 4:39:52)
+- Search Page: <Paper/> lo utilizamos para plasmar objetos como si fuera una hoja de papel, el fondo de una aplicación se asemeja a la textura plana y opaca de una hoja de papel, y el comportamiento de una aplicación imita la capacidad del papel para cambiar el tamaño, barajar y unir en varias hojas. 
+- Search Page: se organizaron los <Results/>como arrays de Room Cards con la informacion del precio del hotel y su descripcion.
+- Search Page: organizar la funcionalidad de los filtros.(filtrar por precios)--> cpaturar los precios del slider y filtar mock data a valores iguales o menores a ese precio.
+- App:
+  App>store.js se crean las variblaes startSlice y endSlice para trabnjar con los datos proporcionados por <DatePicker/> Todos los hooks se tienen que inicializar.
+
+  Consumir useSelector (selectStart, selectEnd)
+- Agregar datos de status a las cabañas para que cuando no esten disponibles en alguna fecha no se muestren status= available : not-available (OJO <h1><strong>muy importante averiguar</strong></h1>)
+
+

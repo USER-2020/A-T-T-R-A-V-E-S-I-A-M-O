@@ -1,11 +1,24 @@
-import { makeStyles, Typography, Chip, Slider } from '@material-ui/core'
+import { makeStyles, Typography, Chip, Slider} from '@material-ui/core'
 import HighlightOffTwoToneIcon  from '@material-ui/icons/HighlightOffTwoTone'
 import React from 'react'
 import mockData, {chips} from '../mockData'
 import Results from './Results'
+import react, {useState} from 'react'
+import { useSelector } from 'react-redux'
+import { selectStart } from '../features/startSlice'
+import { selectEnd } from '../features/endSlice'
+
 
 const SearchPage = () => {
   const classes= useStyle()
+  const [value, setValue] =useState(1000000)
+  const start = useSelector(selectStart)
+  const end = useSelector(selectEnd)
+
+  const handleChanged = (e, newValue)=>{
+    setValue(newValue);
+    console.log(value)
+  }
   return (
     <div className={classes.root}>
       <Typography variant ="h5" gutterBottom>
@@ -26,7 +39,8 @@ const SearchPage = () => {
       </div>
       <div className = {classes.selector}>
         <Typography gutterBottom variant='h5'>Prices</Typography>
-          <Slider defaultValue={50} 
+          <Slider value={value} 
+                  onChange={handleChanged}
                   aria-label="Default" 
                   min={200000}
                   max={1000000}
@@ -41,6 +55,8 @@ const SearchPage = () => {
         // Mapeo de array con las habitaciones
         mockData
         .filter((data)=>data.cat === "cabain")
+        .filter((data)=> data.price < value)
+        // .filter((data)=> end < data.)
         .map(({src, title, description, price}, index)=>(
           <Results title = {title}
                   key={index}
